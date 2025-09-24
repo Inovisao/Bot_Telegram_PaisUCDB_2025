@@ -1,33 +1,28 @@
-# Bot_Telegram_Pais_UCDB
+# Bot de Jokenpo para Telegram (Versão Simplificada)
 
-Este é um bot para Telegram que utiliza um modelo de Inteligência Artificial para classificar imagens de Pedra, Papel e Tesoura (Jokenpo). Ao enviar uma foto, o bot responderá com a classificação e a confiança da predição.
+Um bot que usa IA para adivinhar se a sua foto é Pedra, Papel ou Tesoura. O modelo de IA foi treinado com a ferramenta **Teachable Machine**, que gera os arquivos `keras_model.h5` e `labels.txt`.
 
-## Pré-requisitos
+---
 
-* Python 3.x instalado em seu sistema.
+### Passo 1: Preparar o Ambiente
 
-## Passo a Passo para Utilização
+1.  Garanta que os arquivos `bot_telegram.py`, `keras_model.h5`, e `labels.txt` estejam na mesma pasta.
+2.  Abra um terminal nessa pasta e instale as dependências necessárias:
+    ```bash
+    pip install numpy tensorflow python-telegram-bot Pillow
+    ```
 
-Siga as etapas abaixo para configurar e executar o bot em sua máquina.
+### Passo 2: Obter o Token do Telegram
 
-### 1. Organize os Arquivos
+1.  No Telegram, inicie uma conversa com o **@BotFather**.
+2.  Envie o comando `/newbot` e siga as instruções para criar seu bot.
+3.  Copie o **token** que o BotFather te fornecer ao final.
 
-Certifique-se de que os seguintes arquivos estejam na mesma pasta do projeto:
-* `bot_telegram.py`
-* `keras_model.h5`
-* `labels.txt`
+### Passo 3: Executar o Bot
 
-### 2. Instale as Dependências
-
-Abra seu terminal ou prompt de comando na pasta do projeto e instale as bibliotecas Python necessárias. Execute o seguinte comando:
-
-```bash
-pip install pillow numpy tensorflow python-telegram-bot
-
-### 3. Obtenha o Token do Telegram
-Você precisará de um token de um bot do Telegram para que o código possa se conectar à API. Se você não tiver um:
-
-1. Abra o Telegram и procure pelo usuário BotFather (ele tem um selo de verificação azul).
-2. Inicie uma conversa e envie o comando /newbot.
-3. Siga as instruções para dar um nome e um nome de usuário para o seu bot.
-4. Ao final do processo, o BotFather fornecerá um token de acesso. Copie este token, pois ele será usado na próxima etapa.
+1.  Volte ao terminal.
+2.  Execute o script com o comando abaixo, substituindo `SEU_TOKEN_AQUI` pelo token que você copiou:
+    ```bash
+    python bot_telegram.py SEU_TOKEN_AQUI
+    ```
+3.  Pronto! Encontre seu bot no Telegram e envie uma imagem para testar.
