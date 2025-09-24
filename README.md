@@ -23,3 +23,11 @@ Abra seu terminal ou prompt de comando na pasta do projeto e instale as bibliote
 
 ```bash
 pip install pillow numpy tensorflow python-telegram-bot
+
+### 3. Obtenha o Token do Telegram
+Você precisará de um token de um bot do Telegram para que o código possa se conectar à API. Se você não tiver um:
+
+1. Abra o Telegram и procure pelo usuário BotFather (ele tem um selo de verificação azul).
+2. Inicie uma conversa e envie o comando /newbot.
+3. Siga as instruções para dar um nome e um nome de usuário para o seu bot.
+4. Ao final do processo, o BotFather fornecerá um token de acesso. Copie este token, pois ele será usado na próxima etapa.
