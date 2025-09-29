@@ -1,6 +1,6 @@
 @echo off
 echo ==========================================
-echo Configurando ambiente para o Bot Telegram
+echo Instalando miniconda
 echo ==========================================
 
 REM Criar ambiente virtual com venv nativo
