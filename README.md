@@ -10,6 +10,11 @@ Testador por André Golçalves em 29/09/2025
 1.  Garanta que os arquivos `bot_telegram.py`, `keras_model.h5`, e `labels.txt` estejam na mesma pasta.
 2.  Abra um terminal nessa pasta e instale as dependências necessárias:
     ```bash
+    conda create -n bot_telegram python==3.10
+    conda activate bot_telegram
+    ```
+
+    ```bash
     pip install -r requirements.txt
     ```
 
