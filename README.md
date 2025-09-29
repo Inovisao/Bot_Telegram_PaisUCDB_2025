@@ -9,7 +9,7 @@ Um bot que usa IA para adivinhar se a sua foto é Pedra, Papel ou Tesoura. O mod
 1.  Garanta que os arquivos `bot_telegram.py`, `keras_model.h5`, e `labels.txt` estejam na mesma pasta.
 2.  Abra um terminal nessa pasta e instale as dependências necessárias:
     ```bash
-    pip install python-telegram-bot==13.13 pillow tensorflow==2.12.0
+    pip install -r requirements.txt
     ```
 
 ### Passo 2: Obter o Token do Telegram
