@@ -3,6 +3,7 @@
 Um bot que usa IA para adivinhar se a sua foto é Pedra, Papel ou Tesoura. O modelo de IA foi treinado com a ferramenta **Teachable Machine**, que gera os arquivos `keras_model.h5` e `labels.txt`.
 
 ---
+Testador por André Golçalves em 29/09/2025
 
 ### Passo 1: Preparar o Ambiente
 
