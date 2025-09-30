@@ -18,28 +18,7 @@ O bot usa uma **IA treinada no Teachable Machine**, capaz de classificar imagens
 ├── README.md                          # Esta documentação
 ```
 
----
-
-## 🎯 Desafios do Projeto
-
-### 1️⃣ Criação da IA no Teachable Machine
-1. Acesse: [Teachable Machine](https://teachablemachine.withgoogle.com/).  
-2. Crie um **Image Project**.  
-3. Adicione 4 classes:
-   - Pedra ✊
-   - Papel ✋
-   - Tesoura ✌
-   - Nenhum(a) (imagens sem mão)  
-4. Treine o modelo com as imagens da pasta do Drive.  
-5. Exporte no formato **TensorFlow → Keras**.  
-6. Salve os arquivos:
-   - `keras_model.h5`
-   - `labels.txt`  
-   > Estes arquivos devem ser colocados na mesma pasta do `bot_telegram.py`.
-
----
-
-### 2️⃣ Criação do Bot no Telegram
+### Criação do Bot no Telegram
 1. Instale o **Telegram** no celular.  
 2. Procure pelo usuário **@BotFather**.  
 3. Envie `/newbot` e siga as instruções:  
@@ -51,6 +30,8 @@ O bot usa uma **IA treinada no Teachable Machine**, capaz de classificar imagens
 ---
 
 ### 3️⃣ Instalação do Ambiente Virtual (Conda)
+
+- Baixe ou clone esse repositório no seu computador
 
 #### 🔹 No Windows
 - **Passo 1:** Instale o **Miniconda** (caso ainda não tenha):  
@@ -86,18 +67,7 @@ Execute o script único que prepara tudo automaticamente:
    - Fazer uma jogada aleatória.
    - Informar quem ganhou.
 
----
-
-### 5️⃣ Desafio Opcional
-- Melhorar o código para que o bot jogue automaticamente contra você.  
-- Exemplo de resposta:  
-  ```
-  Você jogou: Pedra  
-  O bot jogou: Tesoura  
-  Resultado: Você venceu! 🎉
-  ```
-
----
+--- 
 
 ## 📦 Dependências
 O projeto utiliza as seguintes bibliotecas principais:
