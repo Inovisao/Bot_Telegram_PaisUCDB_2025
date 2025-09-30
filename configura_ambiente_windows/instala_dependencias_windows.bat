@@ -1,16 +1,17 @@
-#!/bin/bash
-echo "=========================================="
-echo " Configurando ambiente para o Bot Telegram"
-echo "=========================================="
+@echo off
+echo ==========================================
+echo Configurando ambiente para o Bot Telegram
+echo ==========================================
 
-# Criar ambiente conda
-conda create -n bot_telegram python==3.10 -y
+REM Criar ambiente conda (se não existir)
+call conda create -n bot_telegram python=3.10 -c conda-forge -y
 
-# Ativar ambiente
-source ~/anaconda3/etc/profile.d/conda.sh 2>/dev/null || source ~/miniconda3/etc/profile.d/conda.sh
-conda activate bot_telegram
+REM Instalar dependências dentro do ambiente
+echo Ambiente criado! Instalando bibliotecas
+call conda activate bot_telegram
+call python -m pip install -r requirements.txt
 
-# Instalar dependências
-pip install -r requirements.txt
-
-echo "Ambiente configurado com sucesso"
+echo ==========================================
+echo O ambiente está ativado, para instalar as bibliotecas rode o codigo abaixo!
+echo pip install -r requirements.txt
+echo ==========================================
