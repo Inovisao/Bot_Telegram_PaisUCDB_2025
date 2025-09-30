@@ -36,12 +36,12 @@ O bot usa uma **IA treinada no Teachable Machine**, capaz de classificar imagens
 #### 🔹 No Windows
 - **Passo 1:** Instale o **Miniconda** (caso ainda não tenha):  
    ```bash
-   configura_ambiente_windows\configura_miniconda_windows.bat
+   configura_miniconda_windows.bat
    ```
 
 - **Passo 2:** Crie o ambiente e instale as dependências:  
    ```bash
-   configura_ambiente_windows\instala_dependencias_windows.bat
+   instala_dependencias_windows.bat
    ```
 
 ---
@@ -49,7 +49,7 @@ O bot usa uma **IA treinada no Teachable Machine**, capaz de classificar imagens
 #### 🔹 No Linux
 Execute o script único que prepara tudo automaticamente:  
 ```bash
-./configura_ambiente_linux/configura_ambiente_linux.sh
+./ configura_ambiente_linux.sh
 ```
 
 ---
