@@ -8,8 +8,7 @@ call conda tos accept --override-channels --channel https://repo.anaconda.com/pk
 call conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/r
 call conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/msys2
 
-
-
+ECHO Iniciando criação do ambiente conda, não se assuste se demorar um pouco. Caso necessario chame ajuda
 
 REM Criar ambiente conda (se não existir)
 call conda create -n bot_telegram python=3.10 -c conda-forge -y
@@ -20,7 +19,7 @@ call python -m pip install -r requirements.txt
 
 
 echo ==========================================
-echo O ambiente está ativado, para testar rode o codigo abaixo!
+echo O ambiente ativado, para testar rode o codigo abaixo
 echo python bot_telegram.py
 echo ==========================================
 
