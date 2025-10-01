@@ -32,9 +32,9 @@ MODELO_REMBG = "u2netp"
 
 # Regras do jogo em um dicionário para código mais limpo
 REGRAS_VITORIA = {
-    "pedra": "tesoura",
-    "tesoura": "papel",
-    "papel": "pedra"
+    "Pedra": "Tesoura",
+    "Tesoura": "Papel",
+    "Papel": "Pedra"
 }
 
 # --- CONFIGURAÇÃO DO LOGGING ---
