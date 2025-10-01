@@ -32,9 +32,9 @@ MODELO_REMBG = "u2netp"
 
 # Regras do jogo em um dicionário para código mais limpo
 REGRAS_VITORIA = {
-    "Pedra": "Tesoura",
-    "Tesoura": "Papel",
-    "Papel": "Pedra"
+    "pedra": "tesoura",
+    "tesoura": "papel",
+    "papel": "pedra"
 }
 
 # --- CONFIGURAÇÃO DO LOGGING ---
@@ -132,11 +132,14 @@ async def processa_imagem(update, context):
         usuario_jogou = class_name[2:].strip()
         
         # JOGO: Lógica do Jokenpo
-        opcoes_validas = [label[2:].strip() for label in context.bot_data['nomes_classes'] if "Nenhum" not in label]
+        opcoes_validas = [label[2:].strip() for label in context.bot_data['nomes_classes'] if "nenhum" not in label]
         bot_jogou = random.choice(opcoes_validas)
     
         # Determina o resultado usando o dicionário de regras
-        if usuario_jogou == bot_jogou:
+        if usuario_jogou == "nenhum":
+            print("Jogada inválida")
+            resultado = "Jogada inválida"
+        elif usuario_jogou == bot_jogou:
             resultado = "Resultado: *Empate!* 😐"
         elif REGRAS_VITORIA[usuario_jogou] == bot_jogou:
             resultado = "Resultado: *Você venceu!* 🎉"
