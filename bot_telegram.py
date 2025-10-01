@@ -137,9 +137,7 @@ async def processa_imagem(update, context):
         logger.error(f"Ocorreu um erro inesperado: {e}", exc_info=True)
         await update.message.reply_text("Desculpe, ocorreu um erro ao processar sua imagem.")
 
-
 # --- FUNÇÃO PRINCIPAL ---
-
 def main():
     if not TOKEN:
         logger.critical("ERRO: O token do bot não foi fornecido na linha de comando.")
@@ -151,20 +149,35 @@ def main():
         logger.info("Carregando modelos de IA...")
         os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
+        # --- Verificação de existência dos arquivos ---
+        if not os.path.exists(ARQUIVO_MODELO):
+            logger.critical(f"ERRO: Arquivo de modelo '{ARQUIVO_MODELO}' não encontrado!")
+            sys.exit(1)
+
+        if not os.path.exists(ARQUIVO_LABELS):
+            logger.critical(f"ERRO: Arquivo de labels '{ARQUIVO_LABELS}' não encontrado!")
+            sys.exit(1)
+
+        # --- Carregamento do modelo Keras ---
         application.bot_data['modelo_keras'] = load_model(ARQUIVO_MODELO, compile=False)
 
-        # Lê labels e remove índice numérico se existir
+        # --- Carregamento das labels ---
         with open(ARQUIVO_LABELS, 'r', encoding='utf-8') as f:
-            application.bot_data['nomes_classes'] = [linha.strip().split(' ', 1)[-1] for linha in f]
+            application.bot_data['nomes_classes'] = [
+                linha.strip().split(' ', 1)[-1] for linha in f
+            ]
 
+        # --- Sessão do Rembg ---
         application.bot_data['sessao_rembg'] = new_session(model_name=MODELO_REMBG)
 
         logger.info(f"Classes carregadas: {application.bot_data['nomes_classes']}")
         logger.info("Modelos carregados com sucesso.")
-    except FileNotFoundError:
-        logger.critical(f"ERRO: Arquivo de modelo '{ARQUIVO_MODELO}' ou de labels '{ARQUIVO_LABELS}' não encontrado.")
+
+    except Exception as e:
+        logger.critical(f"ERRO ao carregar os modelos: {e}", exc_info=True)
         sys.exit(1)
 
+    # Handlers
     application.add_handler(CommandHandler("start", start))
     application.add_handler(CommandHandler("help", help_command))
     application.add_handler(MessageHandler(filters.PHOTO, processa_imagem))
